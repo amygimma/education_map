@@ -1,4 +1,9 @@
 EducationMap::Application.routes.draw do
+  devise_for :users
+  root :to => "static_pages#index"
+  get "static_pages/index"
+  get "static_pages/about"
+  get "static_pages/contact"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
