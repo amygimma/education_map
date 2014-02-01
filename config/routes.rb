@@ -1,4 +1,14 @@
 EducationMap::Application.routes.draw do
+  get "programs/create"
+  get "programs/show"
+  get "programs/update"
+  get "programs/destroy"
+  get "programs/new"
+  get "programs/edit"
+  get "programs/index"
+  get "programs/map"
+  get "programs/stats"
+  get "programs/search"
   devise_for :users
   root :to => "static_pages#index"
   get "static_pages/index"
