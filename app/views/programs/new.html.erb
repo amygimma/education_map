@@ -1,2 +1,12 @@
-<h1>Programs#new</h1>
-<p>Find me in app/views/programs/new.html.erb</p>
+<h1>Add a Program</h1>
+
+<%= form_for @program do |f| %>
+  Name: <%= f.text_field :name %><br />
+
+  Street: <%= f.text_field :street %><br />
+
+  Address : <%= f.text_field :city %><br />
+
+  <%= f.submit "save", class: 'btn btn-large btn-primary' %>
+<% end %>
+

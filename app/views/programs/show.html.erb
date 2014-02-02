@@ -1,2 +1,20 @@
-<h1>Programs#show</h1>
-<p>Find me in app/views/programs/show.html.erb</p>
+<h1>Program</h1>
+show
+  <div class="span8">
+    <% if @progam.any? %>
+      <h3>@program.name</h3>
+      <ul class="microposts">
+      	<li><strong>Address:</strong></li>
+        <li><%= @program.street %><li>
+        <li><%= @program.city %>, <%= @program.state %>, <%= @program.country %><li>
+        <li><strong>description: </strong><%= @program.description %><li>
+        <li><%= @program.homepage %><li>
+        <li><%= @program.email %><li>
+        <li><%= @program.meetup %><li>
+        <li><%= @program.twitter %><li>
+        <li><%= @program.facebook %><li>
+        <li><%= @program.phone1 %><li>
+        <li><%= @program.phone2 %><li>
+      </ul>
+    <% end %>
+  </div>
