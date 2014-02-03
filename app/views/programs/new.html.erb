@@ -2,10 +2,19 @@
 
 <%= form_for @program do |f| %>
   Name: <%= f.text_field :name %><br />
-
   Street: <%= f.text_field :street %><br />
+  City: <%= f.text_field :city %><br />
+  State: <%= f.text_field :state %><br />
+  Country: <%= f.text_field :country %><br />
+  Description: <%= f.text_area :description %><br />
+  Email: <%= f.text_field :email %><br />
+  Homepage: <%= f.text_field :homepage %><br />
+  Twitter: <%= f.text_field :twitter %><br />
+  Facebook: <%= f.text_field :facebook %><br />
+  Meetup: <%= f.text_field :homepage %><br />
+  Phone #1: <%= f.text_field :phone1 %><br />
+  Phone #2: <%= f.text_field :phone2 %><br />
 
-  Address : <%= f.text_field :city %><br />
 
   <%= f.submit "save", class: 'btn btn-large btn-primary' %>
 <% end %>

@@ -48,6 +48,6 @@ class ProgramsController < ApplicationController
 
   private
     def program_params
-     params.permit(:name, :street, :city)
+     params.require(:program).permit(:name, :street, :city)
     end
 end

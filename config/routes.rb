@@ -1,8 +1,8 @@
 EducationMap::Application.routes.draw do
   resources :programs
-  #get "programs/map"
-  #get "programs/stats"
-  #get "programs/search"
+  get "programs/map"
+  get "programs/stats"
+  get "programs/search"
   devise_for :users
   root :to => "static_pages#index"
   #get "static_pages/index"
