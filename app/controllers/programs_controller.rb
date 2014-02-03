@@ -48,7 +48,6 @@ class ProgramsController < ApplicationController
       @program = program
     else 
       redirect_to programs_path
-      flash[:notice] = "Cannot edit workshops that you did not create"
     end
   end
 
