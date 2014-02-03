@@ -1,25 +1,34 @@
 <h1>Edit Programs</h1>
+  if signed_in? and current_user.id  == program.user_id
+      @program = program
+    else 
+      redirect_to programs_path
+      flash[:notice] = "Cannot edit workshops that you did not create"
+    end
+<% if signed_in? and current_user.id  == program.user_id %>
+	<div class="row">
+	<%= @program.name %>
+	  <div class="span6 offset6">
+	    <%= form_for(@program) do |f| %>
+			  Name: <%= f.text_field :name %><br />
+			  Street: <%= f.text_field :street %><br />
+			  City: <%= f.text_field :city %><br />
+			  State: <%= f.text_field :state %><br />
+			  Country: <%= f.text_field :country %><br />
+			  Description: <%= f.text_area :description %><br />
+			  Email: <%= f.text_field :email %><br />
+			  Homepage: <%= f.text_field :homepage %><br />
+			  Twitter: <%= f.text_field :twitter %><br />
+			  Facebook: <%= f.text_field :facebook %><br />
+			  Meetup: <%= f.text_field :meetup %><br />
+			  Phone #1: <%= f.text_field :phone1 %><br />
+			  Phone #2: <%= f.text_field :phone2 %><br />
 
-<div class="row">
-<%= @program.name %>
-  <div class="span6 offset6">
-    <%= form_for(@program) do |f| %>
-		  Name: <%= f.text_field :name %><br />
-		  Street: <%= f.text_field :street %><br />
-		  City: <%= f.text_field :city %><br />
-		  State: <%= f.text_field :state %><br />
-		  Country: <%= f.text_field :country %><br />
-		  Description: <%= f.text_area :description %><br />
-		  Email: <%= f.text_field :email %><br />
-		  Homepage: <%= f.text_field :homepage %><br />
-		  Twitter: <%= f.text_field :twitter %><br />
-		  Facebook: <%= f.text_field :facebook %><br />
-		  Meetup: <%= f.text_field :meetup %><br />
-		  Phone #1: <%= f.text_field :phone1 %><br />
-		  Phone #2: <%= f.text_field :phone2 %><br />
+			  <%= f.submit "save", class: 'btn btn-large btn-primary' %>
+			<% end %>
 
-		  <%= f.submit "save", class: 'btn btn-large btn-primary' %>
-		<% end %>
-
-  </div>
-</div>
+	  </div>
+	</div>
+<% else %>
+	redirect_to programs_path, data: { confirm: "Delete: You sure? Cannot undo a delete." }
+<% end %>

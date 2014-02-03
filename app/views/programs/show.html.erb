@@ -17,9 +17,9 @@ show
         <li>Phone #1:  <%= @program.phone1 %></li>
         <li>Phone #2:  <%= @program.phone2 %></li>
       </ul>
-      <% if signed_in? %>
-      <%= link_to "Delete", @program, method: :delete,
-                                    data: { confirm: "Delete: You sure? Cannot undo a delete." } %> | 
-      <%= link_to "Edit", edit_program_path %>
+			<% if signed_in? and current_user.id  == @program.user_id %>
+	      <%= link_to "Delete", @program, method: :delete,
+	                                    data: { confirm: "Delete: You sure? Cannot undo a delete." } %> | 
+	      <%= link_to "Edit", edit_program_path %>
       <% end %>
   </div>

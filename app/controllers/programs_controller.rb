@@ -42,8 +42,14 @@ class ProgramsController < ApplicationController
   end
 
   def edit
-      program_id = params["id"]
-      @program = Program.find(program_id)
+    program_id = params["id"]
+    program = Program.find(program_id)
+    if signed_in? and current_user.id  == program.user_id
+      @program = program
+    else 
+      redirect_to programs_path
+      flash[:notice] = "Cannot edit workshops that you did not create"
+    end
   end
 
   def index
