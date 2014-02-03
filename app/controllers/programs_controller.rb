@@ -2,14 +2,8 @@ class ProgramsController < ApplicationController
   before_filter :authenticate_user!
 
   def create
-
-    if not user_signed_in?
-      redirect_to new_user_session_path
-    else
-      @user = current_user
-      @program = @user.programs.build(program_params)
+      @program = current_user.programs.build(program_params)
       @program.save
-    end
       redirect_to @program
   end
 
@@ -27,7 +21,6 @@ class ProgramsController < ApplicationController
 
   def new
     @program = Program.new
-    
     program_id = params["id"]
   end
 
@@ -35,6 +28,7 @@ class ProgramsController < ApplicationController
   end
 
   def index
+    @programs = Program.all()
   end
 
   def map
@@ -48,6 +42,6 @@ class ProgramsController < ApplicationController
 
   private
     def program_params
-     params.require(:program).permit(:name, :street, :city)
+     params.require(:program).permit(:name, :street, :city, :state, :country, :description, :email, :homepage, :twitter, :facebook, :meetup, :phone1, :phone2)
     end
 end

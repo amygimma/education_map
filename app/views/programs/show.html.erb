@@ -1,13 +1,22 @@
 <h1>Program Details</h1>
 show
   <div class="span8">
-<% if not @program.nil? %>
       <h3><%= @program.name %></h3>
       <ul class="microposts">
       	<li><strong>Address:</strong></li>
-        <li><%= @program.street %><li>
-        <li><%= @program.city %><li>
+        <li><%= @program.street %></li>
+        <li><%= @program.city %>, <%= @program.state %>, <%= @program.country %></li>
+        <li><strong>Description</strong></li>
+        <li><%= simple_format(@program.description) %></li>
+        <li><strong>More Info/Contact:</strong></li>
+        <li>Homepage: <%= @program.homepage %></li>
+        <li>Email: <%= @program.email %></li>
+        <li>Twitter: <%= @program.twitter %></li>
+        <li>Facebook: <%= @program.facebook %></li>
+        <li>Meetup: <%= @program.meetup %></li>
+        <li>Phone #1: <%= @program.phone1 %></li>
+        <li>Phone #2: <%= @program.phone1 %></li>
+
       </ul>
-    <% end %>
   </div>
 
