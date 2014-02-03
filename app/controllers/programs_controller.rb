@@ -1,30 +1,49 @@
 class ProgramsController < ApplicationController
-  before_filter :authenticate_user!
 
   def create
+    if signed_in? 
       @program = current_user.programs.build(program_params)
       @program.save
       redirect_to @program
+    end
   end
 
   def show
     program_id = params["id"]
-    @program = current_user.programs.find(program_id) 
+    @program = Program.find(program_id) 
     
   end
 
   def update
+    if signed_in?
+      program_id = params["id"]
+      @program = current_user.programs.find(params[:id])
+      @program.update(program_params)
+      redirect_to program_path(@program)
+    end
   end
 
   def destroy
+    if signed_in?
+      user_id = params["id"]
+      program = current_user.programs.find(user_id)
+      if current_user.id == program.user_id
+        program.destroy
+      end
+      redirect_to programs_path
+    end
   end
 
   def new
-    @program = Program.new
-    program_id = params["id"]
+    if signed_in? 
+      @program = Program.new
+      program_id = params["id"]
+    end
   end
 
   def edit
+      program_id = params["id"]
+      @program = Program.find(program_id)
   end
 
   def index
