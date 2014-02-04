@@ -21,5 +21,8 @@ show
 	      <%= link_to "Delete", @program, method: :delete,
 	                                    data: { confirm: "Delete: You sure? Cannot undo a delete." } %> | 
 	      <%= link_to "Edit", edit_program_path %>
+        <%= link_to "Map", programs_map_path(@program) %>
+
+
       <% end %>
   </div>
