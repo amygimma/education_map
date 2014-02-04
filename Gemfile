@@ -26,3 +26,5 @@ group :production do
 end
 
 gem 'devise', '3.0'
+
+gem 'geocoder'
