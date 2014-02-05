@@ -13,9 +13,11 @@ maxZoom: 18
 }).addTo(map);
 $.getJSON( '/api/map', function( json ) {
 for(var i=0; i<json.length; i++) {
-
+	var link = '/programs/' + json[i].id
+  
 	var marker = L.marker([json[i].latitude, json[i].longitude]).addTo(map);
-	marker.bindPopup(json[i].name).openPopup();
+	marker.bindPopup('<a href="'+ link +'" target="_blank">' + json[i].name + '</a>').openPopup();
+  
 
 }
 console.log(json);

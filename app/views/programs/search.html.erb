@@ -1,2 +1,38 @@
-<h1>Programs#search</h1>
-<p>Find me in app/views/programs/search.html.erb</p>
+<h1>Search Programs</h1>
+
+<input type="search" name="search" id="search_text" />
+<a class = "btn btn-large btn-primary" id="search_button">Search</a>
+
+
+<script>
+$( "#search_button" ).click(function() {
+
+	var input = $('#search_text').val();
+	var url = "/programs/search?query=" + input;
+	document.location=url;
+
+});
+</script>
+
+
+<% if @program != nil %>
+	<div>
+	<h2>Results</h2>
+		<ul class="search_results">
+			<li><h3><%= @program.name %></h3></li>
+	  	<li><strong>Address:</strong></li>
+	    <li><%= @program.street %></li>
+	    <li><%= @program.city %>, <%= @program.state %>, <%= @program.country %></li>
+	    <li><strong>Description: </strong></li>
+	    <li><%= simple_format(@program.description) %></li>
+	    <li><strong>More Info/Contact:</strong></li>
+	    <li>Homepage:  <%= @program.homepage %></li>
+	    <li>Email:     <%= @program.email %></li>
+	    <li>Twitter:   <%= @program.twitter %></li>
+	    <li>Facebook:  <%= @program.facebook %></li>
+	    <li>Meetup:    <%= @program.meetup %></li>
+	    <li>Phone #1:  <%= @program.phone1 %></li>
+	    <li>Phone #2:  <%= @program.phone2 %></li>
+	  </ul>
+	</div>
+<% end %>
