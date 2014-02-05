@@ -62,8 +62,7 @@ class ProgramsController < ApplicationController
   end
 
   def search
-    query = params["query"]
-    @program = Program.find_by(name: query)
+    @programs = Program.search(params[:search])
   end 
 
   private

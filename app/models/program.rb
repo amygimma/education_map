@@ -10,4 +10,9 @@ class Program < ActiveRecord::Base
   def full_address
     "#{street}, #{city}, #{state}, #{country}"
   end
+
+  def self.search(search)
+	    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+	end
 end
+
