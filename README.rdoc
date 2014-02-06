@@ -2,5 +2,5 @@
 
 #Description
 
-This app uses [Leaflet](http://leafletjs.com/leaflet)and [Geocoder](https://github.com/alexreisner/geocoder") to visualize locations of educational programs, which link to program profiles. Programs are also searchable by name, and tags will be added soon to search by type of program.
+This app uses Leaflet and Geocoder to visualize locations of educational programs, which link to program profiles. Programs are also searchable by name, and tags will be added soon to search by type of program.
 
