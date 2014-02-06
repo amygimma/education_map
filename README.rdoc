@@ -1,28 +1,5 @@
 == README
+<h1>Education Map</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p>This map uses <a href="http://leafletjs.com/leaflet">Leaflet</a> and <a href="https://github.com/alexreisner/geocoder">Geocoder</a> to visualize locations of educational programs. Programs are also searchable by name, and tags will be added soon. </p>
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
