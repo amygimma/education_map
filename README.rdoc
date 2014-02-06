@@ -1,5 +1,6 @@
-== README
-<h1>Education Map</h1>
+== Education Map
 
-<p>This map uses <a href="http://leafletjs.com/leaflet">Leaflet</a> and <a href="https://github.com/alexreisner/geocoder">Geocoder</a> to visualize locations of educational programs. Programs are also searchable by name, and tags will be added soon. </p>
+#Description
+
+This app uses [Leaflet](http://leafletjs.com/leaflet)and [Geocoder](https://github.com/alexreisner/geocoder") to visualize locations of educational programs, which link to program profiles. Programs are also searchable by name, and tags will be added soon to search by type of program.
 
